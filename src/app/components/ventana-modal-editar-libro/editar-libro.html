@@ -1,0 +1,79 @@
+<h2 mat-dialog-title>{{data.titulo}}</h2>
+
+<mat-dialog-content class="mat-typography">
+
+  <div>
+    <label for="titulo">Título:</label> <br>
+    <input class="form-control" id="titulo" type="text" placeholder="{{data.titulo}}" [(ngModel)]="data.titulo" name="titulo"/> <br>
+  </div>
+
+  <div>
+    <label for="ISBN">ISBN:</label> <br>
+    <input class="form-control" id="ISBN" type="text" placeholder="{{data.isbn}}" [(ngModel)]="data.isbn" name="isbn"/> <br>
+  </div>
+
+  <div>
+    <label for="Primer autor">Primer autor:</label> <br>
+    <input class="form-control" id="Primer autor" type="text" placeholder="{{data.primerautor}}" [(ngModel)]="data.primerautor" name="primerautor"/> <br>
+  </div>
+
+  <div>
+    <label for="Segundo autor">Segundo autor:</label> <br>
+    <input class="form-control" id="Segundo autor" type="text" placeholder="{{data.segundoautor}}" [(ngModel)]="data.segundoautor" name="segundoautor"/> <br>
+  </div>
+
+  <div>
+    <label for="Tercer autor">Tercer autor:</label> <br>
+    <input class="form-control" id="Tercer autor" type="text" placeholder="{{data.tercerautor}}" [(ngModel)]="data.tercerautor" name="tercerautor"/> <br>
+  </div>
+
+  <div>
+    <label for="Fecha de publicacion">Fecha de publicacion:</label> <br>
+    <input class="form-control" id="Fecha de publicacion" type="date" placeholder="{{data.fechapublicacion}}" [(ngModel)]="data.fechapublicacion" name="fechapublicacion"/> <br>
+  </div>
+
+  <div>
+    <label for="Editorial">Editorial:</label> <br>
+    <input class="form-control" id="Editorial" type="text" placeholder="{{data.editorial}}" [(ngModel)]="data.editorial" name="editorial"/> <br>
+  </div>
+
+  <div>
+    <label for="Genero">Genero:</label> <br>
+    <input class="form-control" id="Genero" type="text" placeholder="{{data.genero}}" [(ngModel)]="data.genero" name="genero"/> <br>
+  </div>
+
+  <!-- FUNCIONALIDAD EDITAR EN DESARROLLO -->
+  <!-- <select name="editorialSelect" class="form-control" id=" editorial" [(ngModel)]="data.editorial" #editorial required>
+    <option value="seleccione" disabled selected>Seleccione Editorial</option>
+    <option value="Gente Nueva">Gente Nueva</option>
+    <option value="Fantastic World">Fantastic World</option>
+    <option value="Sonando">Sonando</option>
+  </select> <br>
+
+  <select name="generoSelect" class="form-control" id="genero" [(ngModel)]="data.genero" #genero required>
+    <option value="seleccione" disable selected>Seleccione Genero</option>
+    <option value="Fantasia">Fantasia</option>
+    <option value="Fantasia">Terror</option>
+    <option value="Fantasia">Musical</option>
+    <option value="Aventura"> Aventura</option>
+    <option value="Comedia">Comedia</option>
+  </select> <br> -->
+
+  <div>
+    <label for="Paginas">Paginas:</label> <br>
+    <input class="form-control" id="Paginas" type="number" placeholder="{{data.paginas}}" [(ngModel)]="data.paginas" name="paginas"/> <br>
+  </div>
+
+  <div>
+    <label for="Campo adicional">Campo adicional:</label> <br>
+    <textarea class="form-control" id="Campo adicional" cols="30" rows="10" placeholder="{{data.descripcion}}" [(ngModel)]="data.descripcion" name="descripcion"></textarea> <br>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+      <button mat-button (click)="onYesClick()" cdkFocusInitial>Editar</button>
+</mat-dialog-actions>
+
+
+

@@ -1,0 +1,100 @@
+
+
+<div>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-9 mx-auto">
+        <div class="card">
+          <form (submit)="onSubmit($event)" #libroForm="ngForm">
+            <div *ngIf="errorMessage" class="alert alert-danger custom-alert" role="alert">
+              {{ errorMessage }}
+            </div>
+
+            <div class="form-group p-2">
+              <div class="form-group">
+                <input type="text" class="form-control" id="titulo" required [(ngModel)]="libro.titulo" name="titulo" #titulo="ngModel" placeholder="Título">
+                <div [hidden]="titulo.valid || titulo.pristine" class="custom-error">
+                  Título es requerido.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="number" class="form-control" id="isbn" required [(ngModel)]="libro.isbn" name="isbn" #isbn="ngModel" placeholder="ISBN">
+                <div [hidden]="isbn.valid || isbn.pristine" class="custom-error">
+                  ISBN es requerido.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="primerautor" required [(ngModel)]="libro.primerautor" name="primerautor" #primerautor="ngModel" placeholder="Primer Autor">
+                <div [hidden]="primerautor.valid || primerautor.pristine" class="custom-error">
+                  Primer autor es requerido.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="segundoautor" [(ngModel)]="libro.segundoautor" name="segundoautor" #segundoautor="ngModel" placeholder="Segundo Autor">
+              </div>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="tercerautor" [(ngModel)]="libro.tercerautor" name="tercerautor" #tercerautor="ngModel" placeholder="Tercer Autor">
+              </div>
+
+              <div class="form-group">
+                <label for="fechapublicacion">Fecha de Publicación</label>
+                <input type="date" class="form-control" id="fechapublicacion" required [(ngModel)]="libro.fechapublicacion" name="fechapublicacion" #fechapublicacion="ngModel">
+                <div [hidden]="fechapublicacion.valid || fechapublicacion.pristine" class="custom-error">
+                  Fecha de Publicación es requerida.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <select class="form-control" id="editorial" name="editorial" required [(ngModel)]="libro.editorial" #editorial="ngModel">
+                  <option value="" disabled selected>Seleccione Editorial</option>
+                  <option value="Gente Nueva">Gente Nueva</option>
+                  <option value="Fantastic World">Fantastic World</option>
+                  <option value="Sonando">Sonando</option>
+                </select>
+                <div [hidden]="editorial.valid || editorial.pristine" class="custom-error">
+                  Editorial es requerida.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <select class="form-control" id="genero" name="genero" required [(ngModel)]="libro.genero" #genero="ngModel">
+                  <option value="" disabled selected>Seleccione Género</option>
+                  <option value="Fantasia">Fantasía</option>
+                  <option value="Terror">Terror</option>
+                  <option value="Musical">Musical</option>
+                  <option value="Aventura">Aventura</option>
+                  <option value="Comedia">Comedia</option>
+                </select>
+                <div [hidden]="genero.valid || genero.pristine" class="custom-error">
+                  Género es requerido.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="number" class="form-control" id="paginas" required [(ngModel)]="libro.paginas" name="paginas" #paginas="ngModel" placeholder="Páginas">
+                <div [hidden]="paginas.valid || paginas.pristine" class="custom-error">
+                  Páginas es requerido.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Campo adicional" cols="30" rows="10" [(ngModel)]="libro.descripcion" name="descripcion" #descripcion="ngModel"></textarea>
+              </div>
+
+              <div class="d-flex flex-column">
+                <button type="submit" class="btn btn-primary btn-block mb-2" [disabled]="!libroForm.form.valid">Agregar</button>
+              <button type="button" class="btn btn-danger btn-block mt-2" (click)="onClick()">Cancelar</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

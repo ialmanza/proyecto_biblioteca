@@ -1,0 +1,9 @@
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item  (click)="goToInicio()">Inicio</button>
+  <button mat-menu-item  (click)="addLibro()" >Añadir</button>
+  <button mat-menu-item (click)="goToEditar()" >Editar</button>
+  <button mat-menu-item (click)="goToListarPorCampo()">Filtrar</button>
+
+</mat-menu>
